@@ -61,6 +61,13 @@ paths:
                     - first_dosage_and_registered_on_the_second
                     - fully_vaccinated
                     - first_dosage_and_not_registered_yet
+                i_am_waiting:
+                  type: string
+                  required: false
+                  enum:
+                    - registered_and_waiting
+                    - not_planning
+                    - had_covid_and_planning_to_be_vaccinated
                 non_formal_meetings:
                   type: string
                   required: true
