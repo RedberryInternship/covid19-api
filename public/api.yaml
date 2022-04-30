@@ -1,8 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Coronatime API
-  description: Here goes description
-  version: 0.1.9
+  title: Covid 19 API
 
 servers:
   - url: https://covid19.devtest.ge/api
