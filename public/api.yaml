@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  title: Coronatime API
+  description: Here goes description
+  version: 0.1.9
+
+servers:
+  - url: http://localhost:8000/api
+    description: local server
+  - url: http://producation.app/api
+    description: production server
+
+paths:
+  /create:
+    post:
+      summary: Create data for questionaire
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  required: true
+                  minLength: 2
+                last_name:
+                  type: string
+                  required: true
+                  minLength: 2
+                email:
+                  type: string
+                  required: true
+                  description: need to be suffixed with @redberry.ge
+                had_covid:
+                  type: boolean
+                  required: true
+                had_antibody_test:
+                  type: boolean
+                  required: false
+                covid_sickness_date:
+                  type: string
+                  required: false
+                antibodies:
+                  type: object
+                  properties:
+                    test_date:
+                      type: string
+                      required: false
+                    number:
+                      type: integer
+                      required: false
+                had_vaccine:
+                  type: boolean
+                  required: true
+                vaccination_stage:
+                  type: string
+                  required: false
+                  enum:
+                    - first_dosage_and_registered_on_the_second
+                    - fully_vaccinated
+                    - first_dosage_and_not_registered_yet
+                non_formal_meetings:
+                  type: string
+                  required: true
+                  enum:
+                    - twice_a_week
+                    - once_a_week
+                    - once_in_a_two_weeks
+                    - once_in_a_month
+                number_of_days_from_office:
+                  type: integer
+                  required: true
+                  enum:
+                    - 0
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                what_about_meetings_in_live:
+                  type: string
+                  required: false
+                tell_us_your_opinion_about_us:
+                  type: string
+                  required: false
+
+      responses:
+        '201':
+          description: Data created succesfully
+          content:
+            application/json:
+              schema:
+
