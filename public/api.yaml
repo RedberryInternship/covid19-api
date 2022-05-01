@@ -32,8 +32,12 @@ paths:
                   required: true
                   description: need to be suffixed with @redberry.ge
                 had_covid:
-                  type: boolean
+                  type: string
                   required: true
+                  enum:
+                    - yes
+                    - no
+                    - have_right_now
                 had_antibody_test:
                   type: boolean
                   required: false
@@ -94,7 +98,7 @@ paths:
               first_name: gela
               last_name: babluani
               email: gela@redberry.ge
-              had_covid: true
+              had_covid: yes
               had_antibody_test: true
               antibodies:
                 test_date: "2022-04-30T13:34:31.347Z"

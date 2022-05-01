@@ -14,8 +14,8 @@ class PostCovidData extends FormRequest
 			'first_name'          => 'required|string|min:3',
 			'last_name'           => 'required|string|min:3',
 			'email'               => 'required|email',
-			'had_covid'           => 'required|boolean',
-			'had_antibody_test'   => 'required_if:had_covid,true',
+			'had_covid'           => 'required|in:yes,no,have_right_now',
+			'had_antibody_test'   => 'required_if:had_covid,yes',
 			'covid_sickness_date' => [
 				'required_if:had_antibody_test,false',
 				new SimpleDateRule(),

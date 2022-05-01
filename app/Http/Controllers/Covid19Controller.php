@@ -6,8 +6,8 @@ use App\Http\Requests\PostCovidData;
 
 class Covid19Controller extends Controller
 {
-    public function create(PostCovidData $request)
-    {
-        return response('', 201);
-    }
+	public function create(PostCovidData $request)
+	{
+		return response('', 201);
+	}
 }
