@@ -20,8 +20,8 @@ class PostCovidData extends FormRequest
 				'required_if:had_antibody_test,false',
 				new SimpleDateRule(),
 			],
-			'antibodies.test_date' => 'required_if:had_antibody_test,true|date',
-			'antibodies.number'    => 'required_if:had_antibody_test,true|integer',
+			'antibodies.test_date' => 'date',
+			'antibodies.number'    => 'integer',
 			'had_vaccine'          => 'required|boolean',
 			'vaccination_stage'    => [
 				'required_if:had_vaccine,true',
