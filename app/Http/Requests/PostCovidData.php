@@ -18,7 +18,7 @@ class PostCovidData extends FormRequest
 			'had_antibody_test'   => 'required_if:had_covid,yes',
 			'covid_sickness_date' => [
 				'required_if:had_antibody_test,false',
-				new SimpleDateRule(),
+                'date'
 			],
 			'antibodies.test_date' => 'date',
 			'antibodies.number'    => 'integer',
@@ -58,8 +58,8 @@ class PostCovidData extends FormRequest
 				'required',
 				Rule::in([0, 1, 2, 3, 4, 5]),
 			],
-			'what_about_meetings_in_live'   => 'string',
-			'tell_us_your_opinion_about_us' => 'string',
+			'what_about_meetings_in_live'   => 'string|nullable',
+			'tell_us_your_opinion_about_us' => 'string|nullable',
 		];
 	}
 }
